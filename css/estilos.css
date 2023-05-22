@@ -1,0 +1,37 @@
+body{
+    background-image: url('https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero.jpg');
+    background-size: cover;
+    font-family: Helvetica , sans-serif !important;
+}
+.itemCabecero{
+    border-color: aliceblue !important;
+    padding-left: 30px !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: linear-gradient(45deg, rgba(255,255,255,0.8), rgba(79, 77, 77, 0.8));
+}
+.contenedor{
+    width: 60%;
+    padding: 10px;
+    background-color: rgba(248,245,260,0.5);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    margin: 50px;
+    min-height: 400px;
+}
+.itemFooter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input, select{
+    background-color: rgba(248,245,260,0.5);
+    border: 0px;
+    height: 25px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.contenedor:hover{
+    background-color: rgba(248,245,260,0.7);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 54px 55px, rgba(0, 0, 0, 0.3) 0px -12px 30px, rgba(0, 0, 0, 0.4) 0px 4px 6px, rgba(0, 0, 0, 0.3) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition-duration: 1s;
+
+}
