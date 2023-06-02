@@ -9,14 +9,14 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/75/75775.png">
-  
+
   <script type="text/javascript" src="js/appCalculadora.js "></script>
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
 
 <body>
   <div class="cabecero " style="max-width: 100%;">
-    <div class="row" style="max-width: 100%;">
+    <div class="row">
       <div class="itemCabecero col">
         <img src="https://www.udistrital.edu.co/themes/custom/versh/logo.png" width="250px" alt="12">
       </div>
@@ -24,223 +24,250 @@
   </div>
   <div class="contenido">
     <div class="contenedor">
-      <h1>Calculadora</h1>
+      <h1 class="text-center">Calculadora</h1>
       <br>
-      <div id="formInicial">
-        <label for="tipo" selected>Seleccione una opción : </label>
-        <select name="opcionForm" id="opcionForm" onchange="formChange(value)">
-          <option value="0" selected>Seleccione una opción</option>
-          <option value="1">calcular</option>
-          <option value="2">Conversión</option>
-          <option value="3">Amortización</option>
-          <option value="4">Capitalización</option>
-        </select>
-
-      </div>
-      <br>
-      <div id="form1" style="display: none;">
-        <hr>
-        <label for="tipo">Que valor desea allar: </label>
-        <select name="opcionCalcular" id="opcionCalcular" onchange="controlarConversor('1',this.value)">
-          <option value="0" selected>Seleccione una opción</option>
-          <option value="1">Interes (i)</option>
-          <option value="2">Tiempo (n)</option>
-          <option value="3">Valor inicial (p)</option>
-          <option value="4">Valor futuro (s)</option>
-        </select>
-        <hr>
-        <div class="row">
-          <div class="col">
-            <label for="P">Valor inicial:</label> <br>
-            <input type="text" id="P" placeholder="p" onkeypress="return validar(event)">
-          </div>
-          <div class="col">
-            <label for="">Interes:</label> <br>
-            <input type="text" id="i" placeholder="i" onkeypress="return validar(event)">
-          </div>
-          <div class="col">
-            <label for="TipoIntereses">Tipo interes:</label> <br>
-            <select name="TipoIntereses" id="TipoIntereses">
-              <option value="" selected>Seleccione una opción</option>
-              <option value="nominal">nominal</option>
-              <option value="efectivo">efectivo</option>
-              <option value="nominal_anticipado">nominal_anticipado</option>
-            </select>
-          </div>
-          <div class="col">
-            <label for="tiempointeres">Tiempo de interes:</label> <br>
-            <select name="tiempointeres" id="tiempointeres">
-              <option value="" selected>Seleccione una opción</option>
-              <option value="1">mensual</option>
-              <option value="2">bimestre</option>
-              <option value="3">trimestre</option>
-              <option value="4">cuatrimestre</option>
-              <option value="6">semestre</option>
-              <option value="12">anual</option>
-            </select>
-          </div>
-          <div class="col">
-            <label for="">Tiempo:</label> <br>
-            <input type="text" id="n" placeholder="n" onkeypress="return validar(event)">
-
-          </div>
-          <div class="col">
-            <label for="">Valor Futuro:</label> <br>
-            <input type="text" id="s" placeholder="s" onkeypress="return validar(event)">
-
-          </div>
+      <form>
+        <div class="form-group" id="formInicial">
+          <label for="tipo" selected>Seleccione una opción: </label>
+          <select class="form-control-sm inline-block" name="opcionForm" id="opcionForm" onchange="formChange(value)">
+            <option value="0" selected></option>
+            <option value="1">calcular</option>
+            <option value="2">Conversión</option>
+            <option value="3">Amortización</option>
+            <option value="4">Capitalización</option>
+            <option value="5">Anualidad (S)</option>
+            <option value="6">Anualidad (P)</option>
+          </select>
         </div>
-      </div>
+      </form>
       <br>
+      <form>
 
-      <div id="form2" style="display: none;">
-        <hr>
-        <label for="tipo">Que valor desea allar: </label>
-        <select name="opcionConversor" id="opcionConversor" onchange="controlarConversor('2',this.value)">
-          <option value="0" selected>Seleccione una opción</option>
-          <option value="1">Interes (i)</option>
-          <option value="2">Tiempo (n)</option>
-        </select>
-        <hr>
-        <div class="row">
-          <div class="col">
-            <label for="P">interes a Convertir:</label> <br>
-            <div class="interesInput">
-              <input type="text" id="i1" placeholder="p" onkeypress="return validar(event)">
+        <form>
+          <div class="form-group" id="form1" style="display: none;">
+            <hr>
+            <label for="tipo">Que valor desea allar: </label>
+            <select class="form-control-sm" name="opcionCalcular" id="opcionCalcular"
+              onchange="controlarConversor('1',this.value)">
+              <option value="0" selected>Seleccione una opción</option>
+              <option value="1">Interes (i)</option>
+              <option value="2">Tiempo (n)</option>
+              <option value="3">Valor inicial (p)</option>
+              <option value="4">Valor futuro (s)</option>
+            </select>
+            <hr>
+            <div class="row">
+              <div class="col">
+                <label for="P">Valor inicial:</label> <br>
+                <input class="form-control-sm" type="text" id="P" placeholder="p" onkeypress="return validar(event)">
+              </div>
+              <div class="col">
+                <label for="">Interes:</label> <br>
+                <input class="form-control-sm" type="text" id="i" placeholder="i" onkeypress="return validar(event)">
+              </div>
+              <div class="col">
+                <label for="">Tiempo:</label> <br>
+                <input class="form-control-sm" type="text" id="n" placeholder="n" onkeypress="return validar(event)">
+
+              </div>
+              <div class="col">
+                <label for="">Valor Futuro:</label> <br>
+                <input class="form-control-sm" type="text" id="s" placeholder="s" onkeypress="return validar(event)">
+              </div>
             </div>
           </div>
-          <div class="col">
-            <label for="TipoInteres1">Tipo interes: <i class="bi bi-percent"></i></label> <br>
-            <select name="TipoInteres1" id="TipoInteres1">
-              <option value="" selected>Seleccione una opción</option>
-              <option value="nominal">nominal</option>
-              <option value="efectivo">efectivo</option>
-              <option value="nominal_anticipado">nominal_anticipado</option>
+        </form>
+        <br>
+        <form>
+          <div class="form-group" id="form2" style="display: none;">
+            <hr>
+            <label for="tipo">Que valor desea allar: </label>
+            <select class="form-control-sm" name="opcionConversor" id="opcionConversor"
+              onchange="controlarConversor('2',this.value)">
+              <option value="0" selected>Seleccione una opción</option>
+              <option value="1">Interes (i)</option>
+              <option value="2">Tiempo (n)</option>
             </select>
-          </div>
-          <div class="col">
-            <label for="">Tiempo:</label> <br>
-            <select name="n1" id="n1">
-              <option value="" selected>Seleccione una opción</option>
-              <option value="1">mensual</option>
-              <option value="2">bimestre</option>
-              <option value="3">trimestre</option>
-              <option value="4">cuatrimestre</option>
-              <option value="6">semestre</option>
-              <option value="12">anual</option>
-            </select>
+            <hr>
+            <div class="row">
+              <div class="col">
+                <label for="P">interes a Convertir:</label> <br>
+                <div class="interesInput">
+                  <input class="form-control-sm" type="text" id="i1" placeholder="p" onkeypress="return validar(event)">
+                </div>
+              </div>
+              <div class="col">
+                <label for="TipoInteres1">Tipo interes: <i class="bi bi-percent"></i></label> <br>
+                <select class="form-control-sm" name="TipoInteres1" id="TipoInteres1">
+                  <option value="" selected>Seleccione una opción</option>
+                  <option value="nominal">nominal</option>
+                  <option value="efectivo">efectivo</option>
+                  <option value="nominal_anticipado">nominal_anticipado</option>
+                </select>
+              </div>
+              <div class="col">
+                <label for="">Tiempo:</label> <br>
+                <select class="form-control-sm" name="n1" id="n1">
+                  <option value="" selected>Seleccione una opción</option>
+                  <option value="1">mensual</option>
+                  <option value="2">bimestre</option>
+                  <option value="3">trimestre</option>
+                  <option value="4">cuatrimestre</option>
+                  <option value="6">semestre</option>
+                  <option value="12">anual</option>
+                </select>
+              </div>
+            </div>
 
+            <hr>
+
+            <div class="row">
+              <div class="col">
+                <label for="P">interes a final:</label> <br>
+                <input class="form-control-sm" type="text" id="i2" placeholder="p" onkeypress="return validar(event)">
+              </div>
+              <div class="col">
+                <label for="TipoInteres2">Tipo interes:</label> <br>
+                <select class="form-control-sm" name="TipoInteres2" id="TipoInteres2">
+                  <option value="" selected>Seleccione una opción</option>
+                  <option value="nominal">nominal</option>
+                  <option value="efectivo">efectivo</option>
+                  <option value="nominal_anticipado">nominal_anticipado</option>
+                </select>
+              </div>
+              <div class="col">
+                <label for="">Tiempo:</label> <br>
+                <select class="form-control-sm" name="n2" id="n2">
+                  <option value="" selected>Seleccione una opción</option>
+                  <option value="1">mensual</option>
+                  <option value="2">bimestre</option>
+                  <option value="3">trimestre</option>
+                  <option value="4">cuatrimestre</option>
+                  <option value="6">semestre</option>
+                  <option value="12">anual</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </form>
+        <form>
+          <div class="form-group" id="form3" style="display: none;">
+            <div id="selectFinal">
+              <hr>
+              <div class="row">
+                <div class="col">
+                  <label for="tipo">Que valor desea allar: </label><br>
+                  <select class="form-control-sm" name="opcionAnualidad" id="opcionAnualidad"
+                    onchange="controlarConversor(document.getElementById('opcionForm').value,this.value)">
+                    <option value="0" selected>Seleccione una opción</option>
+                    <option value="1">Anualidad (A)</option>
+                    <option value="2">Tiempo (n)</option>
+                    <option value="3">interes (i)</option>
+                    <option value="4" id="textoAnualidad"></option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              
+              <hr>
+              <div class="col">
+                <label id="labelValor" for="P"></label> <br>
+                <input class="form-control-sm" type="text" id="ValorTabla" onkeypress="return validar(event)">
+              </div>
+              <div class="col">
+                <label for="">Interes:</label> <br>
+                <input class="form-control-sm" type="text" id="iTabla" placeholder="i"
+                  onkeypress="return validar(event)">
+              </div>
+              <div class="col">
+                <label for="TipoInteresesTabla">Tipo interes:</label> <br>
+                <select class="form-control-sm" name="TipoInteresesTabla" id="TipoInteresesTabla">
+                  <option value="" selected>Seleccione una opción</option>
+                  <option value="nominal">nominal</option>
+                  <option value="efectivo">efectivo</option>
+                  <option value="nominal_anticipado">nominal_anticipado</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <label for="tiempointeresTabla">Tiempo de interes:</label> <br>
+                <select class="form-control-sm" name="tiempointeresTabla" id="tiempointeresTabla">
+                  <option value="" selected>Seleccione una opción</option>
+                  <option value="1">mensual</option>
+                  <option value="2">bimestre</option>
+                  <option value="3">trimestre</option>
+                  <option value="4">cuatrimestre</option>
+                  <option value="6">semestre</option>
+                  <option value="12">anual</option>
+                </select>
+              </div>
+              <div class="col">
+                <label for="nTabla"># de pagos:</label> <br>
+                <input class="form-control-sm" type="text" id="nTabla" placeholder="n"
+                  onkeypress="return validar(event)">
+              </div>
+
+              <div id="TPanualidad" class="col">
+                <label for="n2Tabla">Tipo de pagos:</label> <br>
+                <select class="form-control-sm" name="n2Tabla" id="n2Tabla">
+                  <option value="" selected>Seleccione una opción</option>
+                  <option value="1">mensual</option>
+                  <option value="2">bimestre</option>
+                  <option value="3">trimestre</option>
+                  <option value="4">cuatrimestre</option>
+                  <option value="6">semestre</option>
+                  <option value="12">anual</option>
+                </select>
+              </div>
+
+              <div id="anualidadvalor" class="col">
+                <label  for="AnualidadTabla">Anualidad</label> <br>
+                <input class="form-control-sm" type="text" id="AnualidadTabla" onkeypress="return validar(event)">
+              </div>
+
+            </div>
+            <div class="col-3" id="anticipada">
+              <label><input class="form-check-input" type="checkbox" id="Anticipada" value="true"> Es
+                anticipada?</label><br>
+            </div>
+            <br><br>
+            <table id="tablaValores" class="table table-bordered"></table>
+          </div>
+        </form>
+        <br>
+        <div class="container">
+          <div class="row justify-content-end">
+            <div class="col-5">
+              <button class="btn btn-lg btn-outline-secondary" onclick="limpiarCampos()">Limpiar Campos</button>
+            </div>
+            <div class="col-5">
+              <button class="btn btn-lg btn-outline-dark" onclick="validarcampos()">Calcular</button>
+            </div>
           </div>
         </div>
-        <hr>
-        <div class="row">
-
-          <div class="col">
-            <label for="P">interes a final:</label> <br>
-            <input type="text" id="i2" placeholder="p" onkeypress="return validar(event)">
-          </div>
-          <div class="col">
-            <label for="TipoInteres2">Tipo interes:</label> <br>
-            <select name="TipoInteres2" id="TipoInteres2">
-
-              <option value="" selected>Seleccione una opción</option>
-              <option value="nominal">nominal</option>
-              <option value="efectivo">efectivo</option>
-              <option value="nominal_anticipado">nominal_anticipado</option>
-            </select>
-          </div>
-          <div class="col">
-            <label for="">Tiempo:</label> <br>
-            <select name="n2" id="n2">
-              <option value="" selected>Seleccione una opción</option>
-              <option value="1">mensual</option>
-              <option value="2">bimestre</option>
-              <option value="3">trimestre</option>
-              <option value="4">cuatrimestre</option>
-              <option value="6">semestre</option>
-              <option value="12">anual</option>
-            </select>
-
-          </div>
-        </div>
-
-      </div>
-      <div id="form3" style="display: none;">
-        <div class="row">
-          <div class="col">
-            <label id="labelValor" for="P"></label> <br>
-            <input type="text" id="ValorTabla" onkeypress="return validar(event)">
-          </div>
-          <div class="col">
-            <label for="">Interes:</label> <br>
-            <input type="text" id="iTabla" placeholder="i" onkeypress="return validar(event)">
-          </div>
-          <div class="col">
-            <label for="TipoInteresesTabla">Tipo interes:</label> <br>
-            <select name="TipoInteresesTabla" id="TipoInteresesTabla">
-              <option value="" selected>Seleccione una opción</option>
-              <option value="nominal">nominal</option>
-              <option value="efectivo">efectivo</option>
-              <option value="nominal_anticipado">nominal_anticipado</option>
-            </select>
-          </div>
-          <div class="col-4">
-            <label for="tiempointeresTabla">Tiempo de interes:</label> <br>
-            <select name="tiempointeresTabla" id="tiempointeresTabla">
-              <option value="" selected>Seleccione una opción</option>
-              <option value="1">mensual</option>
-              <option value="2">bimestre</option>
-              <option value="3">trimestre</option>
-              <option value="4">cuatrimestre</option>
-              <option value="6">semestre</option>
-              <option value="12">anual</option>
-            </select>
-          </div>
-          <div class="col">
-            <label for="nTabla"># de pagos:</label> <br>
-            <input type="text" id="nTabla" placeholder="n" onkeypress="return validar(event)">
-
-          </div>
-          
-          <div class="col">            
-            <label for="n2Tabla">Tipo de pagos:</label> <br>
-            <select name="n2Tabla" id="n2Tabla">
-              <option value="" selected>Seleccione una opción</option>
-              <option value="1">mensual</option>
-              <option value="2">bimestre</option>
-              <option value="3">trimestre</option>
-              <option value="4">cuatrimestre</option>
-              <option value="6">semestre</option>
-              <option value="12">anual</option>
-            </select>
-          </div>
-          <div class="col-3">
-            <label><input type="checkbox" id="Anticipada" value="true"> Es anticipada?</label><br>
-
-          </div>
-          
-        </div>
-        <br><br>
-        <table id="tablaValores" class="table"></table>
-      </div>
-    </div>
-    <br>
-    <div>
-      <button>Limpiar Campos</button>
-      <button onclick="validarcampos()">Calcular</button>
     </div>
   </div>
-  </div>
-  <footer>
-    <div class="row" style="max-width: 100%;">
-      <div class="itemFooter col-6">
+  <br>
+  <br>
+  <footer class="footer_">
+    <div class="row" style="max-width: 100%; color: rgba(85, 74, 74, 0.623);">
+      <div>
+        <h5 class="container-lg col-7 mt-3 " style="color:white">Desarrollado por:</h5>
+      </div>
+      <div class="itemFooter col-12 mt-2">
         <ul>
-          <li>diego rodriguez</li>
+          <li>Diego Rodriguez</li>
+        </ul>
+        <ul>
           <li>Maicol Sedano</li>
+        </ul>
+        <ul>
           <li>Sebastian Diaz</li>
         </ul>
       </div>
-
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
