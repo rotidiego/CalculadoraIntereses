@@ -395,7 +395,7 @@ function validarcampos() {
                             if (data.Valor == "" | data.iteraciones == "" | data.i == "") {
                                 alert('Ingrese todos los campos')
                             } else {
-                                document.getElementById('AnualidadTabla').value = Cuotaanualidad(data.Valor, data.i, data.iteraciones, data.anticipada, data.tipoForm).toFixed(2) + '';
+                                document.getElementById('AnualidadTabla').value = Cuotaanualidad(data.Valor, data.i, data.iteraciones, data.anticipada, data.tipoForm);
 
                             }
                             break;
@@ -403,7 +403,7 @@ function validarcampos() {
                             if (data.Valor == "" | data.anualidad == "" | data.i == "") {
                                 alert('Ingrese todos los campos')
                             } else {
-                                document.getElementById('nTabla').value = TiempoAnualidad(data.anualidad, data.i, data.Valor, data.tipoForm).toFixed(2) + '';
+                                document.getElementById('nTabla').value = TiempoAnualidad(data.anualidad, data.i, data.Valor, data.tipoForm);
                             }
                             break;
                         case '4':
@@ -411,7 +411,7 @@ function validarcampos() {
                             if (data.anualidad == "" | data.iteraciones == "" | data.i == "") {
                                 alert('Ingrese todos los campos')
                             } else {
-                                document.getElementById('ValorTabla').value = ValorAnualidad(data.anualidad, data.i, data.iteraciones, data.anticipada, data.tipoForm).toFixed(2) + '';
+                                document.getElementById('ValorTabla').value = ValorAnualidad(data.anualidad, data.i, data.iteraciones, data.anticipada, data.tipoForm);
                             }
                             break;
                     }
