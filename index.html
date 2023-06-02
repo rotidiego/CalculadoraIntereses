@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <div class="cabecero " style="max-width: 100%;">
+  <div class="cabecero " style="max-width: 100%; overflow: hidden;">
     <div class="row">
       <div class="itemCabecero col">
         <img src="https://www.udistrital.edu.co/themes/custom/versh/logo.png" width="250px" alt="12">
@@ -85,8 +85,7 @@
             <select class="form-control-sm" name="opcionConversor" id="opcionConversor"
               onchange="controlarConversor('2',this.value)">
               <option value="0" selected>Seleccione una opción</option>
-              <option value="1">Interes (i)</option>
-              <option value="2">Tiempo (n)</option>
+              <option value="1" selected>Interes (i)</option>
             </select>
             <hr>
             <div class="row">
@@ -162,7 +161,6 @@
                     <option value="0" selected>Seleccione una opción</option>
                     <option value="1">Anualidad (A)</option>
                     <option value="2">Tiempo (n)</option>
-                    <option value="3">interes (i)</option>
                     <option value="4" id="textoAnualidad"></option>
                   </select>
                 </div>
@@ -238,16 +236,20 @@
           </div>
         </form>
         <br>
+        <center>
         <div class="container">
-          <div class="row justify-content-end">
-            <div class="col-5">
-              <button class="btn btn-lg btn-outline-secondary" onclick="limpiarCampos()">Limpiar Campos</button>
+          <div class="row ">
+            <div class="col">
+              <button class="btn btn-lg btn-outline-secondary" style="max-width: 110px;" onclick="limpiarCampos()">Limpiar Campos</button>
+            <br>
             </div>
-            <div class="col-5">
+            <div class="col">
               <button class="btn btn-lg btn-outline-dark" onclick="validarcampos()">Calcular</button>
             </div>
           </div>
         </div>
+
+        </center>
     </div>
   </div>
   <br>
@@ -259,13 +261,13 @@
       </div>
       <div class="itemFooter col-12 mt-2">
         <ul>
-          <li>Diego Rodriguez</li>
+          <li>Diego Rodriguez - 20231678038</li>
         </ul>
         <ul>
-          <li>Maicol Sedano</li>
+          <li>Maicol Sedano - 20231678030</li>
         </ul>
         <ul>
-          <li>Sebastian Diaz</li>
+          <li>Sebastian Diaz - 20231678031</li>
         </ul>
       </div>
     </div>

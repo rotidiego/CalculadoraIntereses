@@ -294,16 +294,11 @@ function validarcampos() {
     var element = document.getElementById('opcionForm').value;
     switch (element) {
         case '1':
-            var tipiI = document.getElementById('TipoIntereses').value;
-            var tiempoI = document.getElementById('tiempointeres').value;
             var nI = document.getElementById('n').value;
             var p = document.getElementById('P').value;
             var s = document.getElementById('s').value;
             var interesCalcular = document.getElementById('i').value;
             var intereses = Number(interesCalcular) / 100;
-            if (tipiI == "" | tiempoI == "") {
-                alert('Ingrese todos los campos')
-            } else {
                 switch (document.getElementById('opcionCalcular').value) {
                     case '1':
                         if (nI == "" | s == "" | p == "") {
@@ -336,7 +331,7 @@ function validarcampos() {
                         }
                         break;
                 }
-            }
+            
             break;
         case '2':
             if (document.getElementById('i1').value == "" | document.getElementById('TipoInteres1').value == ""
