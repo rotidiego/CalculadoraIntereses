@@ -17,6 +17,7 @@ body{
     padding-bottom: 10px;
     background: linear-gradient(45deg, rgb(0, 0, 0), rgba(100, 96, 96, 0.9));
 }
+
 .contenido{
     color: rgba(0, 0, 0, 0.623);
     margin-top: 50px;
